@@ -86,7 +86,7 @@ namespace scale_socket_client_demo_cs
         }
         void SetWeight(byte[] bytes)
         {
-            // 显示重量
+            // 显示重量-xzj
             textBox3.Text = Encoding.ASCII.GetString(bytes, 6, 8);
             textBox4.Text = Encoding.ASCII.GetString(bytes, 14, 3);
 

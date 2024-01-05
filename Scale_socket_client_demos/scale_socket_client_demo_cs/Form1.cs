@@ -90,7 +90,7 @@ namespace scale_socket_client_demo_cs
             textBox3.Text = Encoding.ASCII.GetString(bytes, 6, 8);
             textBox4.Text = Encoding.ASCII.GetString(bytes, 14, 3);
 
-            // 设置状态
+            // 设置状态-xzj
             string status;
             if (bytes[0] == 'S')
                 status = "稳定";

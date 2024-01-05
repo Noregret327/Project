@@ -18,7 +18,7 @@ namespace scale_socket_client_demo_cs
         bool bIsOpen = false;
         public delegate void SetString(string text);
         public delegate void SetBytes(byte[] bytes);
-        private bool isStableDisplayed = false;
+        private bool StableDisplayed = false;
         Thread r_thread=null;
         public Form1()
         {
@@ -86,9 +86,11 @@ namespace scale_socket_client_demo_cs
         }
         void SetWeight(byte[] bytes)
         {
+            // 显示重量
             textBox3.Text = Encoding.ASCII.GetString(bytes, 6, 8);
             textBox4.Text = Encoding.ASCII.GetString(bytes, 14, 3);
 
+            // 设置状态
             string status;
             if (bytes[0] == 'S')
                 status = "稳定";
@@ -99,28 +101,25 @@ namespace scale_socket_client_demo_cs
             else
                 status = "未知状态";
 
+            // 输出状态
             label4.Text = status;
 
-            // Only display in listBox1 if the status is "稳定" (Stable) and not displayed before
-            if (status == "稳定" && !isStableDisplayed)
+            // 输出显示
+            if (status == "稳定" && !StableDisplayed)
             {
                 string str1 = Encoding.ASCII.GetString(bytes, 6, 8);
                 string str2 = Encoding.ASCII.GetString(bytes, 14, 3);
 
                 string str3 = BitConverter.ToString(bytes, 6, 8).Replace("-", "");
-                if (!string.Equals(str3, "202020302E303030"))    //0.000kg 
+                if (!string.Equals(str3, "202020302E303030") && !string.Equals(str3, "2020202020202030"))    //202020302E303030:0.000kg    2020202020202030:0g
                 {
-                    if (!string.Equals(str3, "2020202020202030"))//0g
-                    {
-                        ShowMsg(str1 + str2);
-                        isStableDisplayed = true;
-                    }
+                    ShowMsg(str1 + str2);
+                    StableDisplayed = true;
                 }
             }
             else if (status != "稳定")
             {
-                // Reset the flag if the status is not "稳定"
-                isStableDisplayed = false;
+                StableDisplayed = false;
             }
         }
     }

@@ -13,14 +13,14 @@ using System.Data.SqlTypes;
 
 namespace scale_socket_client_demo_cs
 {
-    public partial class Form1 : Form
+    public partial class OPK : Form
     {
         bool bIsOpen = false;
         public delegate void SetString(string text);
         public delegate void SetBytes(byte[] bytes);
         private bool StableDisplayed = false;
         Thread r_thread=null;
-        public Form1()
+        public OPK()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace scale_socket_client_demo_cs
         {
             if (bIsOpen)
             {
-                button1.Text = "Connect";
+                button1.Text = "IP连接";
                 bIsOpen = false;
                 if (r_thread != null) r_thread.Abort();
             }
@@ -47,7 +47,7 @@ namespace scale_socket_client_demo_cs
                 r_thread = new Thread(Received);
                 r_thread.IsBackground = true;
                 r_thread.Start(ClientSocket);
-                button1.Text = "Close";
+                button1.Text = "断开IP";
                 bIsOpen = true;
             }
         }

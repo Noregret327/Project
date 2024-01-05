@@ -33,3 +33,12 @@ D:\Program\Onedrive\桌面\Scale_socket_client_demos\scale_socket_client_demo_cs
 D:\Program\Onedrive\桌面\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.csproj.CoreCompileInputs.cache
 D:\Program\Onedrive\桌面\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.exe
 D:\Program\Onedrive\桌面\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.pdb
+D:\Program\Onedrive\桌面\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\bin\Debug\scale_socket_client_demo_cs.exe
+D:\Program\Onedrive\桌面\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\bin\Debug\scale_socket_client_demo_cs.pdb
+D:\Program\Onedrive\桌面\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.csproj.AssemblyReference.cache
+D:\Program\Onedrive\桌面\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.Form1.resources
+D:\Program\Onedrive\桌面\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.Properties.Resources.resources
+D:\Program\Onedrive\桌面\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.csproj.GenerateResource.cache
+D:\Program\Onedrive\桌面\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.csproj.CoreCompileInputs.cache
+D:\Program\Onedrive\桌面\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.exe
+D:\Program\Onedrive\桌面\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.pdb

@@ -98,8 +98,6 @@ namespace scale_socket_client_demo_cs
         // 列表显示（批号、编号信息设置）
         void AddListBoxString(string msg)
         {
-
-
             // 将消息添加到列表框，包括批次号和编号
             listBox1.Items.Add($"第{currentBatch}批\t编号{currentItemNumber}：\t{msg}");
 

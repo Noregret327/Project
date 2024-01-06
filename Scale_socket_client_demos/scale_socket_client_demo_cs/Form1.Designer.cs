@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Windows.Forms;
 
 namespace scale_socket_client_demo_cs
 {
@@ -43,6 +44,8 @@ namespace scale_socket_client_demo_cs
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button_msg = new System.Windows.Forms.Button();
+            this.button_del = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -127,11 +130,10 @@ namespace scale_socket_client_demo_cs
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.Font = new System.Drawing.Font("宋体", 16F);
             this.label4.Location = new System.Drawing.Point(574, 196);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(67, 24);
+            this.label4.Size = new System.Drawing.Size(65, 22);
             this.label4.TabIndex = 8;
             this.label4.Text = "state";
             // 
@@ -167,9 +169,6 @@ namespace scale_socket_client_demo_cs
             // 
             // comboBox1
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBox1.Font = new System.Drawing.Font("宋体", 16F);
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -192,14 +191,39 @@ namespace scale_socket_client_demo_cs
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(229, 29);
             this.comboBox1.TabIndex = 15;
-            this.comboBox1.Text = "请设置称重产品数量";
+            this.comboBox1.Text = "请设置产品数量";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // button_msg
+            // 
+            this.button_msg.Font = new System.Drawing.Font("宋体", 16F);
+            this.button_msg.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button_msg.Location = new System.Drawing.Point(500, 673);
+            this.button_msg.Name = "button_msg";
+            this.button_msg.Size = new System.Drawing.Size(227, 48);
+            this.button_msg.TabIndex = 16;
+            this.button_msg.Text = "信息保存";
+            this.button_msg.UseVisualStyleBackColor = true;
+            this.button_msg.Click += new System.EventHandler(this.button_msg_Click);
+            // 
+            // button_del
+            // 
+            this.button_del.Font = new System.Drawing.Font("宋体", 16F);
+            this.button_del.Location = new System.Drawing.Point(500, 601);
+            this.button_del.Name = "button_del";
+            this.button_del.Size = new System.Drawing.Size(227, 48);
+            this.button_del.TabIndex = 17;
+            this.button_del.Text = "删除";
+            this.button_del.UseVisualStyleBackColor = true;
+            this.button_del.Click += new System.EventHandler(this.button_del_Click);
             // 
             // OPK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 737);
+            this.Controls.Add(this.button_del);
+            this.Controls.Add(this.button_msg);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label4);
@@ -235,6 +259,8 @@ namespace scale_socket_client_demo_cs
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox1;
+        private Button button_msg;
+        private Button button_del;
     }
 }
 

@@ -51,3 +51,12 @@ C:\Users\14224\Source\Repos\Project\Scale_socket_client_demos\scale_socket_clien
 C:\Users\14224\Source\Repos\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.exe
 C:\Users\14224\Source\Repos\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.pdb
 C:\Users\14224\Source\Repos\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.OPK.resources
+C:\Users\HXS2023\source\repos\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\bin\Debug\scale_socket_client_demo_cs.exe
+C:\Users\HXS2023\source\repos\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\bin\Debug\scale_socket_client_demo_cs.pdb
+C:\Users\HXS2023\source\repos\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.csproj.AssemblyReference.cache
+C:\Users\HXS2023\source\repos\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.OPK.resources
+C:\Users\HXS2023\source\repos\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.Properties.Resources.resources
+C:\Users\HXS2023\source\repos\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.csproj.GenerateResource.cache
+C:\Users\HXS2023\source\repos\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.csproj.CoreCompileInputs.cache
+C:\Users\HXS2023\source\repos\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.exe
+C:\Users\HXS2023\source\repos\Project\Scale_socket_client_demos\scale_socket_client_demo_cs\obj\Debug\scale_socket_client_demo_cs.pdb

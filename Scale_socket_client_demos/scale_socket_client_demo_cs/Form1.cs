@@ -98,21 +98,17 @@ namespace scale_socket_client_demo_cs
         // 列表显示（批号、编号信息设置）
         void AddListBoxString(string msg)
         {
-            // 如果是新的一组，先添加批次信息
-            if (currentItemNumber == 1)
-            {
-                listBox1.Items.Add($"第{currentBatch}批");
-            }
 
-            // 将消息添加到列表框，包括编号和数据
-            listBox1.Items.Add($"编号{currentItemNumber}: {msg}");
+
+            // 将消息添加到列表框，包括批次号和编号
+            listBox1.Items.Add($"第{currentBatch}批\t编号{currentItemNumber}：\t{msg}");
 
             // 当每组数据达到“selectedNumber”时，增加批次号并重新编号
             if (currentItemNumber % selectedNumber == 0)
             {
                 currentBatch++;
                 currentItemNumber = 1;
-                listBox1.Items.Add(""); // 空一行
+                
             }
             else
             {
@@ -225,34 +221,28 @@ namespace scale_socket_client_demo_cs
         {
             if (listBox1.Items.Count > 0)
             {
-                // 删除最新一行信息
-                int lastIndex = listBox1.Items.Count - 1;
-                listBox1.Items.RemoveAt(lastIndex);
+                // 记录当前组号和编号
+                int currentBatchBackup = currentBatch;
+                int currentItemNumberBackup = currentItemNumber;
 
-                // 如果当前编号小于等于1，需要减少批次号
-                if (currentItemNumber <= 1)
+                // 删除最后一行数据
+                listBox1.Items.RemoveAt(listBox1.Items.Count - 1);
+
+                // 如果删除的是该组的最后一条数据，则将组号减一，编号重置
+                if (currentItemNumberBackup % selectedNumber == 1)
                 {
-                    // 减少批次号
-                    if (currentBatch > 1)
-                    {
-                        currentBatch--;
-                    }
-
-                    // 重新编号
+                    currentBatch--;
                     currentItemNumber = selectedNumber;
                 }
                 else
                 {
-                    // 仅减少编号
+                    // 如果删除的是该组的中间数据，则将编号减一
                     currentItemNumber--;
                 }
-
-                // 更新视图
-                listBox1.TopIndex = listBox1.Items.Count - 1;
             }
             else
             {
-                MessageBox.Show("列表中没有要删除的行。");
+                MessageBox.Show("列表为空，无法删除数据。");
             }
         }
     }

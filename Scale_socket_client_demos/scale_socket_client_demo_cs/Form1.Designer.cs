@@ -204,7 +204,7 @@ namespace scale_socket_client_demo_cs
             this.button_msg.TabIndex = 16;
             this.button_msg.Text = "信息保存";
             this.button_msg.UseVisualStyleBackColor = true;
-            this.button_msg.Click += new System.EventHandler(this.button_msg_Click);
+            //this.button_msg.Click += new System.EventHandler(this.button_msg_Click);
             // 
             // button_del
             // 
@@ -215,7 +215,7 @@ namespace scale_socket_client_demo_cs
             this.button_del.TabIndex = 17;
             this.button_del.Text = "删除";
             this.button_del.UseVisualStyleBackColor = true;
-            this.button_del.Click += new System.EventHandler(this.button_del_Click);
+            //this.button_del.Click += new System.EventHandler(this.button_del_Click);
             // 
             // OPK
             // 

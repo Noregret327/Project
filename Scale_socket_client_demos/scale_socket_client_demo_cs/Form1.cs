@@ -186,62 +186,7 @@ namespace scale_socket_client_demo_cs
                 MessageBox.Show("无效的产品数量选择");
             }
         }
-        /****************************************/
-        //               信息保存
-        /****************************************/
-        // 保存列表信息函数
-        void SaveListBoxContents(string fileName)
-        {
-            using (StreamWriter writer = new StreamWriter(fileName))
-            {
-                foreach (var item in listBox1.Items)
-                {
-                    writer.WriteLine(item.ToString());
-                }
-            }
-
-            MessageBox.Show($"列表内容已保存到文件：{fileName}");
-        }
-        // 保存列表信息按键
-        private void button_msg_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.Filter = "文本文件 (*.txt)|*.txt";
-            saveFileDialog.Title = "保存ListBox1内容";
-
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                SaveListBoxContents(saveFileDialog.FileName);
-            }
-        }
-
-        private void button_del_Click(object sender, EventArgs e)
-        {
-            if (listBox1.Items.Count > 0)
-            {
-                // 记录当前组号和编号
-                int currentBatchBackup = currentBatch;
-                int currentItemNumberBackup = currentItemNumber;
-
-                // 删除最后一行数据
-                listBox1.Items.RemoveAt(listBox1.Items.Count - 1);
-
-                // 如果删除的是该组的最后一条数据，则将组号减一，编号重置
-                if (currentItemNumberBackup % selectedNumber == 1)
-                {
-                    currentBatch--;
-                    currentItemNumber = selectedNumber;
-                }
-                else
-                {
-                    // 如果删除的是该组的中间数据，则将编号减一
-                    currentItemNumber--;
-                }
-            }
-            else
-            {
-                MessageBox.Show("列表为空，无法删除数据。");
-            }
-        }
+        
+       
     }
 }

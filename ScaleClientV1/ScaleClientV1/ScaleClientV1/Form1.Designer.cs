@@ -1,6 +1,6 @@
 ﻿namespace ScaleClientV1
 {
-    partial class Form1
+    partial class Form_MainUI
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,28 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            label1 = new Label();
-            label2 = new Label();
-            textBox2 = new TextBox();
-            button1 = new Button();
-            groupBox1 = new GroupBox();
-            listBox1 = new ListBox();
+            textBox_IP = new TextBox();
+            label_IP = new Label();
+            label_Port = new Label();
+            textBox_Port = new TextBox();
+            button_IPConnect = new Button();
+            groupBox_Weight1 = new GroupBox();
+            listBox_Weight1 = new ListBox();
             button_del = new Button();
             button_excel = new Button();
-            label3 = new Label();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            label77 = new Label();
-            label4 = new Label();
-            label7 = new Label();
-            comboBox1 = new ComboBox();
+            label_Current_Weight = new Label();
+            textBox_Weight = new TextBox();
+            textBox_Flats = new TextBox();
+            label_CurrentState = new Label();
+            label_State = new Label();
+            label_ChanpinNumber = new Label();
+            comboBox_ChanpinNumbei = new ComboBox();
             button_finish = new Button();
             button_load = new Button();
             textBox_code = new TextBox();
-            label5 = new Label();
+            label_CurrentCode = new Label();
             button_start = new Button();
-            groupBox2 = new GroupBox();
+            groupBox_Controlillustrate = new GroupBox();
             label13 = new Label();
             label12 = new Label();
             label11 = new Label();
@@ -58,78 +58,82 @@
             label8 = new Label();
             label6 = new Label();
             textBox_connect = new TextBox();
-            groupBox1.SuspendLayout();
-            groupBox2.SuspendLayout();
+            label_ChanpinName = new Label();
+            textBox_ChanpinName = new TextBox();
+            label_ClientName = new Label();
+            textBox_ClientName = new TextBox();
+            groupBox_Weight1.SuspendLayout();
+            groupBox_Controlillustrate.SuspendLayout();
             SuspendLayout();
             // 
-            // textBox1
+            // textBox_IP
             // 
-            textBox1.Location = new Point(171, 20);
-            textBox1.Margin = new Padding(6, 5, 6, 5);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(182, 35);
-            textBox1.TabIndex = 0;
+            textBox_IP.Location = new Point(139, 18);
+            textBox_IP.Margin = new Padding(6, 5, 6, 5);
+            textBox_IP.Name = "textBox_IP";
+            textBox_IP.Size = new Size(266, 35);
+            textBox_IP.TabIndex = 0;
             // 
-            // label1
+            // label_IP
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(27, 23);
-            label1.Name = "label1";
-            label1.Size = new Size(103, 30);
-            label1.TabIndex = 1;
-            label1.Text = "电子秤IP:";
+            label_IP.AutoSize = true;
+            label_IP.Location = new Point(18, 23);
+            label_IP.Name = "label_IP";
+            label_IP.Size = new Size(103, 30);
+            label_IP.TabIndex = 1;
+            label_IP.Text = "电子秤IP:";
             // 
-            // label2
+            // label_Port
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(414, 26);
-            label2.Name = "label2";
-            label2.Size = new Size(57, 30);
-            label2.TabIndex = 3;
-            label2.Text = "端口";
+            label_Port.AutoSize = true;
+            label_Port.Location = new Point(425, 23);
+            label_Port.Name = "label_Port";
+            label_Port.Size = new Size(79, 30);
+            label_Port.TabIndex = 3;
+            label_Port.Text = "端口：";
             // 
-            // textBox2
+            // textBox_Port
             // 
-            textBox2.Location = new Point(558, 23);
-            textBox2.Margin = new Padding(6, 5, 6, 5);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(182, 35);
-            textBox2.TabIndex = 2;
-            textBox2.Text = "55555";
+            textBox_Port.Location = new Point(524, 18);
+            textBox_Port.Margin = new Padding(6, 5, 6, 5);
+            textBox_Port.Name = "textBox_Port";
+            textBox_Port.Size = new Size(216, 35);
+            textBox_Port.TabIndex = 2;
+            textBox_Port.Text = "55555";
             // 
-            // button1
+            // button_IPConnect
             // 
-            button1.Location = new Point(811, 20);
-            button1.Name = "button1";
-            button1.Size = new Size(157, 42);
-            button1.TabIndex = 4;
-            button1.Text = "IP连接";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button_IPConnect.Location = new Point(756, 14);
+            button_IPConnect.Name = "button_IPConnect";
+            button_IPConnect.Size = new Size(258, 99);
+            button_IPConnect.TabIndex = 4;
+            button_IPConnect.Text = "IP连接";
+            button_IPConnect.UseVisualStyleBackColor = true;
+            button_IPConnect.Click += button1_Click;
             // 
-            // groupBox1
+            // groupBox_Weight1
             // 
-            groupBox1.Controls.Add(listBox1);
-            groupBox1.Location = new Point(12, 133);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(728, 783);
-            groupBox1.TabIndex = 5;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "称重数据";
+            groupBox_Weight1.Controls.Add(listBox_Weight1);
+            groupBox_Weight1.Location = new Point(12, 216);
+            groupBox_Weight1.Name = "groupBox_Weight1";
+            groupBox_Weight1.Size = new Size(728, 700);
+            groupBox_Weight1.TabIndex = 5;
+            groupBox_Weight1.TabStop = false;
+            groupBox_Weight1.Text = "重量";
             // 
-            // listBox1
+            // listBox_Weight1
             // 
-            listBox1.Dock = DockStyle.Fill;
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 28;
-            listBox1.Location = new Point(3, 31);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(722, 749);
-            listBox1.TabIndex = 0;
+            listBox_Weight1.Dock = DockStyle.Fill;
+            listBox_Weight1.FormattingEnabled = true;
+            listBox_Weight1.ItemHeight = 28;
+            listBox_Weight1.Location = new Point(3, 31);
+            listBox_Weight1.Name = "listBox_Weight1";
+            listBox_Weight1.Size = new Size(722, 666);
+            listBox_Weight1.TabIndex = 0;
             // 
             // button_del
             // 
-            button_del.Location = new Point(804, 826);
+            button_del.Location = new Point(811, 757);
             button_del.Name = "button_del";
             button_del.Size = new Size(157, 42);
             button_del.TabIndex = 6;
@@ -139,78 +143,78 @@
             // 
             // button_excel
             // 
-            button_excel.Location = new Point(790, 874);
+            button_excel.Location = new Point(797, 822);
             button_excel.Name = "button_excel";
             button_excel.Size = new Size(192, 42);
             button_excel.TabIndex = 8;
             button_excel.Text = "导入Excel模板";
             button_excel.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // label_Current_Weight
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(821, 184);
-            label3.Name = "label3";
-            label3.Size = new Size(123, 30);
-            label3.TabIndex = 9;
-            label3.Text = "当前重量：";
+            label_Current_Weight.AutoSize = true;
+            label_Current_Weight.Location = new Point(832, 216);
+            label_Current_Weight.Name = "label_Current_Weight";
+            label_Current_Weight.Size = new Size(123, 30);
+            label_Current_Weight.TabIndex = 9;
+            label_Current_Weight.Text = "当前重量：";
             // 
-            // textBox3
+            // textBox_Weight
             // 
-            textBox3.Location = new Point(777, 238);
-            textBox3.Margin = new Padding(6, 5, 6, 5);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(205, 35);
-            textBox3.TabIndex = 10;
+            textBox_Weight.Location = new Point(756, 261);
+            textBox_Weight.Margin = new Padding(6, 5, 6, 5);
+            textBox_Weight.Name = "textBox_Weight";
+            textBox_Weight.Size = new Size(241, 35);
+            textBox_Weight.TabIndex = 10;
             // 
-            // textBox4
+            // textBox_Flats
             // 
-            textBox4.Location = new Point(902, 238);
-            textBox4.Margin = new Padding(6, 5, 6, 5);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(80, 35);
-            textBox4.TabIndex = 11;
+            textBox_Flats.Location = new Point(934, 261);
+            textBox_Flats.Margin = new Padding(6, 5, 6, 5);
+            textBox_Flats.Name = "textBox_Flats";
+            textBox_Flats.Size = new Size(80, 35);
+            textBox_Flats.TabIndex = 11;
             // 
-            // label77
+            // label_CurrentState
             // 
-            label77.AutoSize = true;
-            label77.Location = new Point(811, 288);
-            label77.Name = "label77";
-            label77.Size = new Size(123, 30);
-            label77.TabIndex = 12;
-            label77.Text = "称重状态：";
+            label_CurrentState.AutoSize = true;
+            label_CurrentState.Location = new Point(832, 127);
+            label_CurrentState.Name = "label_CurrentState";
+            label_CurrentState.Size = new Size(123, 30);
+            label_CurrentState.TabIndex = 12;
+            label_CurrentState.Text = "称重状态：";
             // 
-            // label4
+            // label_State
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(832, 341);
-            label4.Name = "label4";
-            label4.Size = new Size(57, 30);
-            label4.TabIndex = 13;
-            label4.Text = "状态";
+            label_State.AutoSize = true;
+            label_State.Location = new Point(851, 173);
+            label_State.Name = "label_State";
+            label_State.Size = new Size(57, 30);
+            label_State.TabIndex = 13;
+            label_State.Text = "状态";
             // 
-            // label7
+            // label_ChanpinNumber
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(804, 393);
-            label7.Name = "label7";
-            label7.Size = new Size(164, 30);
-            label7.TabIndex = 14;
-            label7.Text = "产品数量(每盒):";
+            label_ChanpinNumber.AutoSize = true;
+            label_ChanpinNumber.Location = new Point(425, 181);
+            label_ChanpinNumber.Name = "label_ChanpinNumber";
+            label_ChanpinNumber.Size = new Size(164, 30);
+            label_ChanpinNumber.TabIndex = 14;
+            label_ChanpinNumber.Text = "产品数量(每盒):";
             // 
-            // comboBox1
+            // comboBox_ChanpinNumbei
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" });
-            comboBox1.Location = new Point(777, 445);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(205, 36);
-            comboBox1.TabIndex = 15;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            comboBox_ChanpinNumbei.FormattingEnabled = true;
+            comboBox_ChanpinNumbei.Items.AddRange(new object[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20" });
+            comboBox_ChanpinNumbei.Location = new Point(607, 175);
+            comboBox_ChanpinNumbei.Name = "comboBox_ChanpinNumbei";
+            comboBox_ChanpinNumbei.Size = new Size(130, 36);
+            comboBox_ChanpinNumbei.TabIndex = 15;
+            comboBox_ChanpinNumbei.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // button_finish
             // 
-            button_finish.Location = new Point(804, 615);
+            button_finish.Location = new Point(811, 563);
             button_finish.Name = "button_finish";
             button_finish.Size = new Size(157, 91);
             button_finish.TabIndex = 17;
@@ -220,7 +224,7 @@
             // 
             // button_load
             // 
-            button_load.Location = new Point(804, 750);
+            button_load.Location = new Point(811, 698);
             button_load.Name = "button_load";
             button_load.Size = new Size(157, 42);
             button_load.TabIndex = 18;
@@ -229,24 +233,25 @@
             // 
             // textBox_code
             // 
-            textBox_code.Location = new Point(746, 144);
+            textBox_code.Location = new Point(139, 127);
             textBox_code.Margin = new Padding(6, 5, 6, 5);
             textBox_code.Name = "textBox_code";
-            textBox_code.Size = new Size(268, 35);
+            textBox_code.Size = new Size(258, 35);
             textBox_code.TabIndex = 19;
+            textBox_code.TextAlign = HorizontalAlignment.Center;
             // 
-            // label5
+            // label_CurrentCode
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(821, 104);
-            label5.Name = "label5";
-            label5.Size = new Size(123, 30);
-            label5.TabIndex = 20;
-            label5.Text = "当前条码：";
+            label_CurrentCode.AutoSize = true;
+            label_CurrentCode.Location = new Point(18, 132);
+            label_CurrentCode.Name = "label_CurrentCode";
+            label_CurrentCode.Size = new Size(123, 30);
+            label_CurrentCode.TabIndex = 20;
+            label_CurrentCode.Text = "当前条码：";
             // 
             // button_start
             // 
-            button_start.Location = new Point(804, 500);
+            button_start.Location = new Point(811, 448);
             button_start.Name = "button_start";
             button_start.Size = new Size(157, 91);
             button_start.TabIndex = 21;
@@ -254,22 +259,22 @@
             button_start.UseVisualStyleBackColor = true;
             button_start.Click += button_start_Click;
             // 
-            // groupBox2
+            // groupBox_Controlillustrate
             // 
-            groupBox2.Controls.Add(label13);
-            groupBox2.Controls.Add(label12);
-            groupBox2.Controls.Add(label11);
-            groupBox2.Controls.Add(label10);
-            groupBox2.Controls.Add(label9);
-            groupBox2.Controls.Add(label8);
-            groupBox2.Controls.Add(label6);
-            groupBox2.Location = new Point(1023, 24);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(276, 892);
-            groupBox2.TabIndex = 22;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "操作说明";
-            groupBox2.Enter += groupBox2_Enter;
+            groupBox_Controlillustrate.Controls.Add(label13);
+            groupBox_Controlillustrate.Controls.Add(label12);
+            groupBox_Controlillustrate.Controls.Add(label11);
+            groupBox_Controlillustrate.Controls.Add(label10);
+            groupBox_Controlillustrate.Controls.Add(label9);
+            groupBox_Controlillustrate.Controls.Add(label8);
+            groupBox_Controlillustrate.Controls.Add(label6);
+            groupBox_Controlillustrate.Location = new Point(1023, 24);
+            groupBox_Controlillustrate.Name = "groupBox_Controlillustrate";
+            groupBox_Controlillustrate.Size = new Size(276, 892);
+            groupBox_Controlillustrate.TabIndex = 22;
+            groupBox_Controlillustrate.TabStop = false;
+            groupBox_Controlillustrate.Text = "操作说明";
+            groupBox_Controlillustrate.Enter += groupBox2_Enter;
             // 
             // label13
             // 
@@ -336,76 +341,116 @@
             // 
             // textBox_connect
             // 
-            textBox_connect.Location = new Point(15, 83);
+            textBox_connect.ForeColor = SystemColors.WindowText;
+            textBox_connect.Location = new Point(18, 78);
             textBox_connect.Name = "textBox_connect";
             textBox_connect.ReadOnly = true;
-            textBox_connect.Size = new Size(725, 35);
+            textBox_connect.Size = new Size(719, 35);
             textBox_connect.TabIndex = 23;
             textBox_connect.Text = "未连接";
+            textBox_connect.TextAlign = HorizontalAlignment.Center;
             // 
-            // Form1
+            // label_ChanpinName
+            // 
+            label_ChanpinName.AutoSize = true;
+            label_ChanpinName.Location = new Point(19, 181);
+            label_ChanpinName.Name = "label_ChanpinName";
+            label_ChanpinName.Size = new Size(123, 30);
+            label_ChanpinName.TabIndex = 12;
+            label_ChanpinName.Text = "产品名称：";
+            // 
+            // textBox_ChanpinName
+            // 
+            textBox_ChanpinName.Location = new Point(140, 176);
+            textBox_ChanpinName.Name = "textBox_ChanpinName";
+            textBox_ChanpinName.Size = new Size(257, 35);
+            textBox_ChanpinName.TabIndex = 24;
+            textBox_ChanpinName.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label_ClientName
+            // 
+            label_ClientName.AutoSize = true;
+            label_ClientName.Location = new Point(425, 130);
+            label_ClientName.Name = "label_ClientName";
+            label_ClientName.Size = new Size(123, 30);
+            label_ClientName.TabIndex = 12;
+            label_ClientName.Text = "客户名称：";
+            // 
+            // textBox_ClientName
+            // 
+            textBox_ClientName.Location = new Point(537, 130);
+            textBox_ClientName.Name = "textBox_ClientName";
+            textBox_ClientName.Size = new Size(200, 35);
+            textBox_ClientName.TabIndex = 24;
+            textBox_ClientName.TextAlign = HorizontalAlignment.Center;
+            // 
+            // Form_MainUI
             // 
             AutoScaleDimensions = new SizeF(13F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1303, 928);
+            ClientSize = new Size(1303, 919);
+            Controls.Add(textBox_ClientName);
+            Controls.Add(textBox_ChanpinName);
             Controls.Add(textBox_connect);
-            Controls.Add(groupBox2);
+            Controls.Add(groupBox_Controlillustrate);
             Controls.Add(button_start);
-            Controls.Add(label5);
+            Controls.Add(label_CurrentCode);
             Controls.Add(textBox_code);
             Controls.Add(button_load);
             Controls.Add(button_finish);
-            Controls.Add(comboBox1);
-            Controls.Add(label7);
-            Controls.Add(label4);
-            Controls.Add(label77);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(label3);
+            Controls.Add(comboBox_ChanpinNumbei);
+            Controls.Add(label_ChanpinNumber);
+            Controls.Add(label_State);
+            Controls.Add(label_ClientName);
+            Controls.Add(label_ChanpinName);
+            Controls.Add(label_CurrentState);
+            Controls.Add(textBox_Flats);
+            Controls.Add(textBox_Weight);
+            Controls.Add(label_Current_Weight);
             Controls.Add(button_excel);
             Controls.Add(button_del);
-            Controls.Add(groupBox1);
-            Controls.Add(button1);
-            Controls.Add(label2);
-            Controls.Add(textBox2);
-            Controls.Add(label1);
-            Controls.Add(textBox1);
+            Controls.Add(groupBox_Weight1);
+            Controls.Add(button_IPConnect);
+            Controls.Add(label_Port);
+            Controls.Add(textBox_Port);
+            Controls.Add(label_IP);
+            Controls.Add(textBox_IP);
             Font = new Font("Microsoft YaHei UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(6, 5, 6, 5);
-            Name = "Form1";
-            Text = "OPK_电子秤";
+            Name = "Form_MainUI";
+            Text = "欧派克智能称重系统";
             Load += Form1_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
+            groupBox_Weight1.ResumeLayout(false);
+            groupBox_Controlillustrate.ResumeLayout(false);
+            groupBox_Controlillustrate.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private Label label1;
-        private Label label2;
-        private TextBox textBox2;
-        private Button button1;
-        private GroupBox groupBox1;
-        private ListBox listBox1;
+        private TextBox textBox_IP;
+        private Label label_IP;
+        private Label label_Port;
+        private TextBox textBox_Port;
+        private Button button_IPConnect;
+        private GroupBox groupBox_Weight1;
+        private ListBox listBox_Weight1;
         private Button button_del;
         private Button button_excel;
-        private Label label3;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Label label77;
-        private Label label4;
-        private Label label7;
-        private ComboBox comboBox1;
+        private Label label_Current_Weight;
+        private TextBox textBox_Weight;
+        private TextBox textBox_Flats;
+        private Label label_CurrentState;
+        private Label label_State;
+        private Label label_ChanpinNumber;
+        private ComboBox comboBox_ChanpinNumbei;
         private Button button_finish;
         private Button button_load;
         private TextBox textBox_code;
-        private Label label5;
+        private Label label_CurrentCode;
         private Button button_start;
-        private GroupBox groupBox2;
+        private GroupBox groupBox_Controlillustrate;
         private TextBox textBox_connect;
         private Label label9;
         private Label label8;
@@ -414,5 +459,9 @@
         private Label label12;
         private Label label11;
         private Label label10;
+        private Label label_ChanpinName;
+        private TextBox textBox_ChanpinName;
+        private Label label_ClientName;
+        private TextBox textBox_ClientName;
     }
 }

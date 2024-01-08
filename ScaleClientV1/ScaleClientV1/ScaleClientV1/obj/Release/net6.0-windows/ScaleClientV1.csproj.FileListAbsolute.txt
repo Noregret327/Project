@@ -78,7 +78,6 @@ C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\Scal
 C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\ScaleClientV1\bin\Release\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\ScaleClientV1\bin\Release\net6.0-windows\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\ScaleClientV1\obj\Release\net6.0-windows\ScaleClientV1.csproj.AssemblyReference.cache
-C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\ScaleClientV1\obj\Release\net6.0-windows\ScaleClientV1.Form1.resources
 C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\ScaleClientV1\obj\Release\net6.0-windows\ScaleClientV1.csproj.GenerateResource.cache
 C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\ScaleClientV1\obj\Release\net6.0-windows\ScaleClientV1.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\ScaleClientV1\obj\Release\net6.0-windows\ScaleClientV1.AssemblyInfoInputs.cache
@@ -91,3 +90,5 @@ C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\Scal
 C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\ScaleClientV1\obj\Release\net6.0-windows\ScaleClientV1.pdb
 C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\ScaleClientV1\obj\Release\net6.0-windows\ScaleClientV1.genruntimeconfig.cache
 C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\ScaleClientV1\obj\Release\net6.0-windows\ref\ScaleClientV1.dll
+C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\ScaleClientV1\obj\Release\net6.0-windows\ScaleClientV1.Properties.Resources.resources
+C:\Users\14224\Source\Repos\Noregret327\Project\ScaleClientV1\ScaleClientV1\ScaleClientV1\obj\Release\net6.0-windows\ScaleClientV1.Form_MainUI.resources

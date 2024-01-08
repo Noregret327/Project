@@ -18,19 +18,20 @@ using NPOI.SS.Util;
 
 namespace ScaleClientV1
 {
-    public partial class Form1 : Form
+    public partial class Form_MainUI : Form
     {
         // 变量设置
-        int currentBatch = 1;      // 批号
-        int currentItemNumber = 1; // 编号
-        int selectedNumber = 5;    // 产品数量选择（默认为5）
+        int currentBatch = 1;                   // 批号
+        int currentItemNumber = 1;              // 编号
+        int selectedNumber = 5;                 // 产品数量选择（默认为5）
+        int TotalNumber = 6;   // 总数量（总重量+产品数量）
         //
         bool bIsOpen = false;
         public delegate void SetString(string text);
         public delegate void SetBytes(byte[] bytes);
         private bool StableDisplayed = false;
         Thread r_thread = null;
-        public Form1()
+        public Form_MainUI()
         {
             InitializeComponent();
         }
@@ -41,15 +42,15 @@ namespace ScaleClientV1
         {
             if (bIsOpen)
             {
-                button1.Text = "IP连接";
+                button_IPConnect.Text = "IP连接";
                 bIsOpen = false;
                 if (r_thread != null) r_thread.Abort();
             }
             else
             {
                 Socket ClientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-                IPAddress iPAddress = IPAddress.Parse(textBox1.Text);
-                System.Net.EndPoint endpoint = new IPEndPoint(iPAddress, Convert.ToInt32(textBox2.Text));
+                IPAddress iPAddress = IPAddress.Parse(textBox_IP.Text);
+                System.Net.EndPoint endpoint = new IPEndPoint(iPAddress, Convert.ToInt32(textBox_Port.Text));
 
                 //2.连接服务器
                 ClientSocket.Connect(endpoint);
@@ -59,7 +60,7 @@ namespace ScaleClientV1
                 r_thread = new Thread(Received);
                 r_thread.IsBackground = true;
                 r_thread.Start(ClientSocket);
-                button1.Text = "断开IP";
+                button_IPConnect.Text = "断开IP";
                 bIsOpen = true;
             }
         }
@@ -106,10 +107,10 @@ namespace ScaleClientV1
 
 
             // 将消息添加到列表框，包括批次号和编号
-            listBox1.Items.Add($"第{currentBatch}批\t编号{currentItemNumber}：\t{msg}");
+            listBox_Weight1.Items.Add($"第{currentBatch}批\t编号{currentItemNumber}：\t{msg}");
 
-            // 当每组数据达到“selectedNumber”时，增加批次号并重新编号
-            if (currentItemNumber % selectedNumber == 0)
+            // 当每组数据达到“TotalNumber”时，增加批次号并重新编号
+            if (currentItemNumber % TotalNumber == 0)
             {
                 currentBatch++;
                 currentItemNumber = 1;
@@ -121,15 +122,15 @@ namespace ScaleClientV1
             }
 
             // 将视图滚动到最底部
-            listBox1.TopIndex = listBox1.Items.Count - 1;
+            listBox_Weight1.TopIndex = listBox_Weight1.Items.Count - 1;
         }
 
         // 重量设置
         void SetWeight(byte[] bytes)
         {
             // 当前称重显示（重量、单位）
-            textBox3.Text = Encoding.ASCII.GetString(bytes, 6, 8);
-            textBox4.Text = Encoding.ASCII.GetString(bytes, 14, 3);
+            textBox_Weight.Text = Encoding.ASCII.GetString(bytes, 6, 8);
+            textBox_Flats.Text = Encoding.ASCII.GetString(bytes, 14, 3);
             // 当前称重状态判断
             string status;
             Color statusColor;
@@ -154,9 +155,9 @@ namespace ScaleClientV1
                 statusColor = Color.Gray; // 设置 "未知状态" 状态的颜色为绿色
             }
             // 当前称重状态输出
-            label4.Text = status;
-            label4.ForeColor = statusColor;
-            label4.Font = new Font(label4.Font, FontStyle.Bold);
+            label_State.Text = status;
+            label_State.ForeColor = statusColor;
+            label_State.Font = new Font(label_State.Font, FontStyle.Bold);
 
             // 完整称重信息输出
             if (status == "稳定" && !StableDisplayed)
@@ -183,10 +184,11 @@ namespace ScaleClientV1
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             // 检查是否选择了有效的数字
-            if (int.TryParse(comboBox1.SelectedItem.ToString(), out selectedNumber))
+            if (int.TryParse(comboBox_ChanpinNumbei.SelectedItem.ToString(), out selectedNumber))
             {
                 // 你可以在这里使用 selectedNumber，它是 comboBox1 中选择的数字
                 MessageBox.Show($"当前产品数量为：{selectedNumber}");
+                TotalNumber = selectedNumber + 1;
             }
             else
             {
@@ -201,7 +203,7 @@ namespace ScaleClientV1
         {
             using (StreamWriter writer = new StreamWriter(fileName))
             {
-                foreach (var item in listBox1.Items)
+                foreach (var item in listBox_Weight1.Items)
                 {
                     writer.WriteLine(item.ToString());
                 }
@@ -224,20 +226,20 @@ namespace ScaleClientV1
 
         private void button_del_Click(object sender, EventArgs e)
         {
-            if (listBox1.Items.Count > 0)
+            if (listBox_Weight1.Items.Count > 0)
             {
                 // 记录当前组号和编号
                 int currentBatchBackup = currentBatch;
                 int currentItemNumberBackup = currentItemNumber;
 
                 // 删除最后一行数据
-                listBox1.Items.RemoveAt(listBox1.Items.Count - 1);
+                listBox_Weight1.Items.RemoveAt(listBox_Weight1.Items.Count - 1);
 
                 // 如果删除的是该组的最后一条数据，则将组号减一，编号重置
-                if (currentItemNumberBackup % selectedNumber == 1)
+                if (currentItemNumberBackup % TotalNumber == 1)
                 {
                     currentBatch--;
-                    currentItemNumber = selectedNumber;
+                    currentItemNumber = TotalNumber;
                 }
                 else
                 {
@@ -254,7 +256,7 @@ namespace ScaleClientV1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            readTxtToListBox("tempDat.txt");
+            //readTxtToListBox("tempDat.txt");
         }
 
         private void listBox1_FormatStringChanged(object sender, EventArgs e)
@@ -269,7 +271,7 @@ namespace ScaleClientV1
             {
                 // 处理每一行数据
                 //Console.WriteLine(line);
-                listBox1.Items.Add($"{line}");
+                listBox_Weight1.Items.Add($"{line}");
             }
         }
 
@@ -289,9 +291,9 @@ namespace ScaleClientV1
                 {
                     saveToDB(srcPath);//将数据存储到数据库DB
                     File.Copy(srcPath, dstPath);
-                    comboBox1.Enabled = true;
+                    comboBox_ChanpinNumbei.Enabled = true;
 
-                    txtToExcel(srcPath, excelFilePath, int.Parse(comboBox1.Text));
+                    txtToExcel(srcPath, excelFilePath, int.Parse(comboBox_ChanpinNumbei.Text));
                     MessageBox.Show("本次称重完成！");
                 }
                 catch (Exception ex)
@@ -317,7 +319,7 @@ namespace ScaleClientV1
                     string insert_sql = "INSERT INTO opk_data(code,data,group_times,datetime_1) VALUES(" +
                         $"'{textBox_code.Text}'," +
                         $"'{line.Substring(9).Replace("：","").Replace("	", "")}'," +
-                        $"'{comboBox1.Text}','{DateTime.Now}')";
+                        $"'{comboBox_ChanpinNumbei.Text}','{DateTime.Now}')";
                     //MessageBox.Show("sql="+insert_sql);
                     sq.Execute(insert_sql);
                 }
@@ -327,14 +329,14 @@ namespace ScaleClientV1
 
         private void button_start_Click(object sender, EventArgs e)
         {
-            if (comboBox1.Enabled)
+            if (comboBox_ChanpinNumbei.Enabled)
             {
-                comboBox1.Enabled = false;
+                comboBox_ChanpinNumbei.Enabled = false;
                 button_start.Text = "重新开始";
             }
             else
             {
-                comboBox1.Enabled = true;
+                comboBox_ChanpinNumbei.Enabled = true;
                 button_start.Text = "开始";
             }
 
@@ -366,7 +368,7 @@ namespace ScaleClientV1
                 string[] lines = File.ReadAllLines(filePath);
                 //MessageBox.Show("lines="+lines.Length);//20
                 int lineNum = 2;
-                int every_times = int.Parse(comboBox1.Text);
+                int every_times = int.Parse(comboBox_ChanpinNumbei.Text) + 1;
                 int j = 0;
                 IRow data_row = sheet.CreateRow(lineNum);
                 //for (int w = 0; w < lines.Length; w++)
@@ -384,25 +386,14 @@ namespace ScaleClientV1
                         {
                             string weight = line.Substring(9).Replace("：", "").Replace("	", "");
                             //IRow data_row = sheet.CreateRow(lineNum);
-                        if(j< every_times)
-                        {
+                            if(j< every_times)
+                            {
                             
-                            data_row.CreateCell(j).SetCellValue(weight);
-                            j++;
+                                data_row.CreateCell(j).SetCellValue(weight);
+                                j++;
+                            }
                         }
-
-                            
-                        //for (int j = 0; j < every_times; j++)
-                        //{
-
-                        //}
-
-
-
-
-
-                    }
-                    }
+                }
                 
 
                 foreach (string line in lines)

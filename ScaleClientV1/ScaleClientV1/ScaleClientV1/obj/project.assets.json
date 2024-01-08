@@ -1819,24 +1819,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\14224\\.nuget\\packages\\": {},
-    "D:\\Program Files (x86)\\Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\HXS2023\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\14224\\Source\\Repos\\Noregret327\\Project\\ScaleClientV1\\ScaleClientV1\\ScaleClientV1\\ScaleClientV1.csproj",
+      "projectUniqueName": "C:\\Users\\HXS2023\\Source\\Repos\\Noregret327\\Project\\ScaleClientV1\\ScaleClientV1\\ScaleClientV1\\ScaleClientV1.csproj",
       "projectName": "ScaleClientV1",
-      "projectPath": "C:\\Users\\14224\\Source\\Repos\\Noregret327\\Project\\ScaleClientV1\\ScaleClientV1\\ScaleClientV1\\ScaleClientV1.csproj",
-      "packagesPath": "C:\\Users\\14224\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\14224\\Source\\Repos\\Noregret327\\Project\\ScaleClientV1\\ScaleClientV1\\ScaleClientV1\\obj\\",
+      "projectPath": "C:\\Users\\HXS2023\\Source\\Repos\\Noregret327\\Project\\ScaleClientV1\\ScaleClientV1\\ScaleClientV1\\ScaleClientV1.csproj",
+      "packagesPath": "C:\\Users\\HXS2023\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\HXS2023\\Source\\Repos\\Noregret327\\Project\\ScaleClientV1\\ScaleClientV1\\ScaleClientV1\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "D:\\Program Files (x86)\\Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\14224\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\HXS2023\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1882,6 +1877,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.25, 6.0.25]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"

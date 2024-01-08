@@ -254,7 +254,7 @@ namespace ScaleClientV1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            readTxtToListBox("tempDat.txt");
+            // readTxtToListBox("tempDat.txt");
         }
 
         private void listBox1_FormatStringChanged(object sender, EventArgs e)
@@ -425,7 +425,7 @@ namespace ScaleClientV1
 
                 }
 
-                // 保存文件
+                // 保存文件--11
                 FileStream sw = File.Create(excelFilePath);
                 wb.Write(sw);
                 sw.Close();

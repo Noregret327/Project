@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScaleClientV1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+152576b7308ccec8461e37470a1eba2c227fb6c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f62341f95d17c1b67956b3972fd25343eb5f595d")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScaleClientV1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScaleClientV1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

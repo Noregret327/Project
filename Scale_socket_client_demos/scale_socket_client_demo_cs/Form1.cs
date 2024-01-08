@@ -16,7 +16,7 @@ namespace scale_socket_client_demo_cs
 {
     public partial class OPK : Form
     {
-        // 变量设置
+        // 变量设置-2024
         int currentBatch = 1;      // 批号
         int currentItemNumber = 1; // 编号
         int selectedNumber = 5;    // 产品数量选择（默认为5）

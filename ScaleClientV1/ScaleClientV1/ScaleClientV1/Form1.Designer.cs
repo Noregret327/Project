@@ -341,7 +341,7 @@
             // 
             // textBox_connect
             // 
-            textBox_connect.ForeColor = SystemColors.WindowText;
+            textBox_connect.ForeColor = Color.White;
             textBox_connect.Location = new Point(18, 78);
             textBox_connect.Name = "textBox_connect";
             textBox_connect.ReadOnly = true;

@@ -26,11 +26,15 @@ namespace ScaleClientV1
         int selectedNumber = 5;                 // 产品数量选择（默认为5）
         int TotalNumber = 6;   // 总数量（总重量+产品数量）
         //
-        bool bIsOpen = false;
+       /* bool bIsOpen = false;
+        Thread r_thread = null;*/
         public delegate void SetString(string text);
         public delegate void SetBytes(byte[] bytes);
         private bool StableDisplayed = false;
-        Thread r_thread = null;
+        // 
+        private CancellationTokenSource cancellationTokenSource;
+        private Thread r_thread;
+        private bool bIsOpen = false;
         public Form_MainUI()
         {
             InitializeComponent();
@@ -38,36 +42,72 @@ namespace ScaleClientV1
         /****************************************/
         //               电子秤IP连接
         /****************************************/
+        /* private void button1_Click(object sender, EventArgs e)
+         {
+             if (bIsOpen)
+             {
+                 button_IPConnect.Text = "IP连接";
+                 bIsOpen = false;
+                 if (r_thread != null) r_thread.Abort();
+             }
+             else
+             {
+                 Socket ClientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+                 IPAddress iPAddress = IPAddress.Parse(textBox_IP.Text);
+                 System.Net.EndPoint endpoint = new IPEndPoint(iPAddress, Convert.ToInt32(textBox_Port.Text));
+
+
+                 //2.连接服务器
+                 ClientSocket.Connect(endpoint);
+                 //Console.WriteLine("客户端连接成功。。。");
+                 textBox_connect.Text = "客户端已连接";
+                 textBox_connect.ForeColor = Color.Green;
+                 //开启一个新线程，执行接收消息方法
+                 r_thread = new Thread(Received);
+                 r_thread.IsBackground = true;
+                 r_thread.Start(ClientSocket);
+                 button_IPConnect.Text = "断开IP";
+                 bIsOpen = true;
+             }
+         }*/
         private void button1_Click(object sender, EventArgs e)
         {
             if (bIsOpen)
             {
                 button_IPConnect.Text = "IP连接";
                 bIsOpen = false;
-                if (r_thread != null) r_thread.Abort();
+                cancellationTokenSource?.Cancel(); // 取消任务
+                r_thread?.Join(); // 等待线程结束
             }
             else
             {
+                // 创建 CancellationTokenSource
+                cancellationTokenSource = new CancellationTokenSource();
+
                 Socket ClientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
                 IPAddress iPAddress = IPAddress.Parse(textBox_IP.Text);
                 System.Net.EndPoint endpoint = new IPEndPoint(iPAddress, Convert.ToInt32(textBox_Port.Text));
 
-                //2.连接服务器
+                // 连接服务器
                 ClientSocket.Connect(endpoint);
-                //Console.WriteLine("客户端连接成功。。。");
                 textBox_connect.Text = "客户端已连接";
-                //开启一个新线程，执行接收消息方法
-                r_thread = new Thread(Received);
+                textBox_connect.ForeColor = Color.Green;
+
+                // 开启一个新线程，执行接收消息方法
+                r_thread = new Thread(() => Received(ClientSocket, cancellationTokenSource.Token));
                 r_thread.IsBackground = true;
-                r_thread.Start(ClientSocket);
+                r_thread.Start();
+
                 button_IPConnect.Text = "断开IP";
+
                 bIsOpen = true;
             }
         }
+
         /****************************************/
         //               电子秤数据接收
         /****************************************/
-        void Received(object o)
+        /*void Received(object o)
         {
             try
             {
@@ -89,6 +129,51 @@ namespace ScaleClientV1
                 socketSend.Close();
             }
             catch { }
+        }*/
+        async void Received(object o, CancellationToken cancellationToken)
+        {
+            try
+            {
+                Socket socketSend = o as Socket;
+                byte[] buffer = new byte[128]; // 客户端连接服务器成功后，服务器接收客户端发送的消息
+
+                while (!cancellationToken.IsCancellationRequested)
+                {
+                    // 使用异步接收数据
+                    int len = await Task.Run(() => socketSend.Receive(buffer, 0, buffer.Length, SocketFlags.None));
+
+                    if (len == 0)
+                    {
+                        break;
+                    }
+
+                    string str = Encoding.UTF8.GetString(buffer, 0, len);
+
+                    // 使用 InvokeRequired 来检查是否在 UI 线程上调用
+                    if (this.InvokeRequired)
+                    {
+                        SetBytes stcb = new SetBytes(SetWeight);
+                        this.Invoke(stcb, buffer);
+                    }
+                    else
+                    {
+                        SetWeight(buffer);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // 处理异常，例如记录日志
+                Console.WriteLine($"Exception in Received method: {ex.Message}");
+            }
+            finally
+            {
+                // 执行清理操作，确保关闭 socket
+                if (o is Socket socketSend)
+                {
+                    socketSend.Close();
+                }
+            }
         }
         /****************************************/
         //               显示信息设置
@@ -167,7 +252,7 @@ namespace ScaleClientV1
                 string str2 = Encoding.ASCII.GetString(bytes, 14, 3);
                 // 编码转换（当前重量）
                 string str3 = BitConverter.ToString(bytes, 6, 8).Replace("-", "");
-                if (!string.Equals(str3, "202020302E303030") && !string.Equals(str3, "2020202020202030"))    //判断当前重量有无0g和0.000kg——202020302E303030:0.000kg    2020202020202030:0g
+                if (!string.Equals(str3, "202020302E303030") && !string.Equals(str3, "2020202020202030") && comboBox_ChanpinNumbei.Enabled==false)    //判断当前重量有无0g和0.000kg——202020302E303030:0.000kg    2020202020202030:0g
                 {
                     ShowMsg(str1 + str2);
                     StableDisplayed = true;

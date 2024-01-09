@@ -418,6 +418,10 @@ namespace ScaleClientV1
             {
                 comboBox_ChanpinNumbei.Enabled = false;
                 button_start.Text = "重新开始";
+
+                // 客户信息显示
+                textBox_ChanpinName.Text = "平移内倒门";
+                textBox_ClientName.Text = "黄XX";
             }
             else
             {

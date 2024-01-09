@@ -73,6 +73,7 @@
             textBox_IP.Name = "textBox_IP";
             textBox_IP.Size = new Size(266, 35);
             textBox_IP.TabIndex = 0;
+            textBox_IP.TextAlign = HorizontalAlignment.Center;
             // 
             // label_IP
             // 
@@ -100,6 +101,7 @@
             textBox_Port.Size = new Size(216, 35);
             textBox_Port.TabIndex = 2;
             textBox_Port.Text = "55555";
+            textBox_Port.TextAlign = HorizontalAlignment.Center;
             // 
             // button_IPConnect
             // 
@@ -153,7 +155,7 @@
             // label_Current_Weight
             // 
             label_Current_Weight.AutoSize = true;
-            label_Current_Weight.Location = new Point(832, 216);
+            label_Current_Weight.Location = new Point(832, 332);
             label_Current_Weight.Name = "label_Current_Weight";
             label_Current_Weight.Size = new Size(123, 30);
             label_Current_Weight.TabIndex = 9;
@@ -161,7 +163,7 @@
             // 
             // textBox_Weight
             // 
-            textBox_Weight.Location = new Point(756, 261);
+            textBox_Weight.Location = new Point(756, 377);
             textBox_Weight.Margin = new Padding(6, 5, 6, 5);
             textBox_Weight.Name = "textBox_Weight";
             textBox_Weight.Size = new Size(241, 35);
@@ -169,7 +171,7 @@
             // 
             // textBox_Flats
             // 
-            textBox_Flats.Location = new Point(934, 261);
+            textBox_Flats.Location = new Point(934, 377);
             textBox_Flats.Margin = new Padding(6, 5, 6, 5);
             textBox_Flats.Name = "textBox_Flats";
             textBox_Flats.Size = new Size(80, 35);
@@ -178,7 +180,7 @@
             // label_CurrentState
             // 
             label_CurrentState.AutoSize = true;
-            label_CurrentState.Location = new Point(832, 127);
+            label_CurrentState.Location = new Point(832, 243);
             label_CurrentState.Name = "label_CurrentState";
             label_CurrentState.Size = new Size(123, 30);
             label_CurrentState.TabIndex = 12;
@@ -187,7 +189,7 @@
             // label_State
             // 
             label_State.AutoSize = true;
-            label_State.Location = new Point(851, 173);
+            label_State.Location = new Point(851, 289);
             label_State.Name = "label_State";
             label_State.Size = new Size(57, 30);
             label_State.TabIndex = 13;
@@ -251,9 +253,9 @@
             // 
             // button_start
             // 
-            button_start.Location = new Point(811, 448);
+            button_start.Location = new Point(756, 127);
             button_start.Name = "button_start";
-            button_start.Size = new Size(157, 91);
+            button_start.Size = new Size(258, 91);
             button_start.TabIndex = 21;
             button_start.Text = "开始";
             button_start.UseVisualStyleBackColor = true;
